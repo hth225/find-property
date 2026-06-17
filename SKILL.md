@@ -1,9 +1,9 @@
 ---
-name: find-property
-description: Use when a user wants to find and evaluate a South Korean property (전세/월세/매매) and contact a listing agent. Runs an adaptive needs interview, searches Naver 부동산/직방/다방 in the browser, ranks candidates by fit, screens 전세/월세 for 전세 사기 fraud risk, and drafts or sends an inquiry to the agent for a viewing.
+name: claude-budongsan
+description: Use when a user wants to find and evaluate a South Korean property (전세/월세/매매), check it for fraud/fake-listing risk, review a lease contract, or contact a listing agent. 클로드 부동산 — runs an adaptive needs interview, searches 직방/다방/피터팬 in the browser (네이버 부동산은 사용자 URL만), ranks candidates by fit, screens 전세/월세 for 전세 사기 and 허위매물, reviews 계약서/특약 and 보증금 보호, and drafts an inquiry to the agent for a viewing.
 ---
 
-# find-property
+# claude-budongsan (클로드 부동산)
 
 Help a user find the best-fitting South Korean property and arrange a viewing.
 Load `reference/korea-real-estate.md` for domain terms, sites, 매매 due-diligence,

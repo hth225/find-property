@@ -1,7 +1,7 @@
-# find-property
+# claude-budongsan (클로드 부동산)
 
 <p align="center">
-  <img src="assets/welcome.png" alt="클로드 공인중개사사무소 — find-property" width="600">
+  <img src="assets/welcome.png" alt="클로드 공인중개사사무소 — claude-budongsan" width="600">
 </p>
 
 한국 부동산(전세·월세·매매)을 찾고 평가한 뒤 중개사에게 연락까지 도와주는 **Claude 스킬(Skill)**입니다.
@@ -30,7 +30,7 @@
 ## 구성
 
 ```
-find-property/
+claude-budongsan/
 ├── SKILL.md                          # 스킬 본문 (5단계 워크플로우 + 가드레일)
 └── reference/
     ├── search-guide.md               # Phase 2 검색 방법 가이드
@@ -53,10 +53,10 @@ find-property/
 
 GitHub 저장소에서 zip을 받습니다.
 ```bash
-git clone git@github.com:hth225/find-property.git
-cd find-property
+git clone git@github.com:hth225/claude-budongsan.git
+cd claude-budongsan
 # 폴더 자체가 루트에 들어가도록 압축 (SKILL.md만 담으면 안 됩니다)
-zip -r find-property.zip SKILL.md reference
+zip -r claude-budongsan.zip SKILL.md reference
 ```
 > 또는 GitHub의 **Code → Download ZIP** 버튼으로 받아도 됩니다.
 > 핵심은 zip 안에 `SKILL.md`와 `reference/` 폴더가 **함께** 들어 있어야 한다는 점입니다.
@@ -68,7 +68,7 @@ zip -r find-property.zip SKILL.md reference
 
 ### 4단계 — 활성화 확인
 
-스킬 목록에 **find-property**가 나타나면, 토글을 켜서 활성화합니다.
+스킬 목록에 **claude-budongsan (클로드 부동산)**이 나타나면, 토글을 켜서 활성화합니다.
 끄거나 삭제하려면 스킬 옆 `···` 메뉴를 사용하세요.
 
 ### (중요) 브라우저 검색을 위한 Claude Chrome 확장 프로그램
@@ -80,7 +80,7 @@ zip -r find-property.zip SKILL.md reference
 - 확장 프로그램이 Claude에게 웹페이지를 읽고·클릭하고·이동하는 권한을 부여해, 실매물 검색이 가능해집니다.
 - 확장 프로그램 없이도 스킬은 동작하지만, 이 경우 Claude가 **매물 URL을 직접 붙여넣어 달라고 요청**한 뒤 그 매물만 정규화·분석합니다.
 
-> Claude Code 사용자라면 저장소를 `~/.claude/skills/find-property`로 clone 하면 됩니다. 단, 본 README는 데스크톱 앱 기준입니다.
+> Claude Code 사용자라면 저장소를 `~/.claude/skills/claude-budongsan`으로 clone 하면 됩니다. 단, 본 README는 데스크톱 앱 기준입니다.
 
 ---
 

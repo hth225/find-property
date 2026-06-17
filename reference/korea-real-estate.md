@@ -1,6 +1,6 @@
 # 한국 부동산 참조 자료
 
-이 문서는 `find-property` 스킬이 INTERVIEW · RANK · CONTACT 단계에서 로드하는 참조 자료입니다.
+이 문서는 `claude-budongsan`(클로드 부동산) 스킬이 INTERVIEW · RANK · CONTACT 단계에서 로드하는 참조 자료입니다.
 법적·중개 조언이 아니며, 사용자가 직접 판단하여 활용해야 합니다.
 
 ---
