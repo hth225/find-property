@@ -20,9 +20,12 @@ Produce a structured `criteria` object.
 
 ## Phase 2 — SEARCH
 Search for candidates yourself, following `reference/search-guide.md`: drive the
-browser (computer use) across Naver 부동산 / 직방 / 다방 with the `criteria`
-facets, normalize the results (incl. 미끼_의심 flags), and pull MOLIT comps where
-available. Gather data only here — no ranking yet. If browsing is blocked or
+browser (computer use) across 직방 / 다방 / 피터팬 with the `criteria` facets,
+normalize the results (incl. 미끼_의심 flags), and pull MOLIT/KB comps where
+available. **네이버 부동산은 자동 접근 금지** (약관·robots.txt, 판례) → 직접 크롤링
+하지 말고, 사용자가 네이버에서 본 매물 URL을 붙여넣으면 그것만 정규화한다.
+피터팬은 직거래 비중이 높아 허위매물 가드레일을 반드시 적용한다(search-guide의
+허위매물 점검). Gather data only here — no ranking yet. If browsing is blocked or
 unavailable, ask the user to paste listing URLs and normalize those instead.
 
 ## Phase 3 — RANK
