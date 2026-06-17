@@ -1,5 +1,9 @@
 # find-property
 
+<p align="center">
+  <img src="assets/welcome.png" alt="클로드 공인중개사사무소 — find-property" width="600">
+</p>
+
 한국 부동산(전세·월세·매매)을 찾고 평가한 뒤 중개사에게 연락까지 도와주는 **Claude 스킬(Skill)**입니다.
 
 니즈 인터뷰 → 매물 검색 → 적합도 랭킹 → 전세사기 위험 점검 → 중개사 문의 작성/발송 → 계약 전 실사 핸드오프까지, 집 구하는 전 과정을 단계별로 안내합니다.
