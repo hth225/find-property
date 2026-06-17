@@ -15,8 +15,16 @@ hints.
    the criteria's facets (지역, 거래유형, 가격범위, 면적, 방수, 건물유형). These
    sites are JS-rendered and anti-bot — a plain HTTP fetch will not return live
    listings; use the browser. Requires the user to have Computer use enabled.
-2. Where available, pull MOLIT 지역 실거래가 comps for price context (area-level
-   only; frequently missing for 빌라/오피스텔 — leave null if so).
+2. Where available, pull price-context comps. Cross-check multiple sources since
+   any one can be off:
+   - **MOLIT 실거래가** (rt.molit.go.kr) — area-level; frequently missing for
+     빌라/오피스텔 (leave null if so).
+   - **KB시세** — 은행 대출 기준 시세 (아파트·오피스텔에 신뢰도 높음).
+   - **안심전세앱** — 빌라·오피스텔 시세 + 임대인 보증사고·체납·악성임대인 이력.
+   - 공시지가·과거 경매 낙찰가도 보조 지표로 참고.
+   For 빌라/다가구 where 시세 is opaque, the 공인중개사 quote may be 호가, not 시세 —
+   treat as advisory. Capture an **경매 낙찰가율** estimate where possible so Phase 3
+   can run the 깡통전세 formula (see `jeonse-fraud-check.md`).
 3. Flag likely 허위매물/미끼매물: implausibly cheap, stale, duplicated, or
    "이미 계약됨" bait.
 
