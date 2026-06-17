@@ -35,15 +35,22 @@ unavailable, ask the user to paste listing URLs and normalize those instead.
 
 ## Phase 4 — CONTACT
 For the user's chosen listing(s), draft the Korean inquiry from the template in
-`reference/korea-real-estate.md`.
-- **Gate 1 (ALL listings):** show the exact message + proposed viewing times and
-  send only after the user approves.
+`reference/korea-real-estate.md`. **Never send anything yourself — the user
+sends it.** Present the draft so the user can act on it in one step:
+- **Copyable message:** output the exact Korean message inside a fenced code
+  block (gives a one-click copy button). Include the proposed viewing times.
+- **"메시지 앱에서 열기" button:** add a clickable `sms:` deep link to the
+  listing's contact number with the message URL-encoded into the body, e.g.
+  `[📩 메시지 앱에서 열기](sms:01012345678&body=<URL-encoded message>)` — see
+  the deep-link recipe in `reference/korea-real-estate.md`. Use `imessage:` as
+  an Apple-device alternative. If no phone number is exposed, give the copyable
+  message plus the listing site's contact link instead.
+- **Gate 1 (ALL listings):** show the message + viewing times for the user to
+  review before they copy/send.
 - **Gate 2 (🔴 listings):** show the fraud warning with reasons and require
-  explicit acknowledgment before contacting.
-- Send via computer use through the listing site's contact channel. If computer
-  use is unavailable, hand the user the message to send themselves.
-- Relay the agent's replies to the user. Never share the user's PII, transfer any
-  deposit, or commit to a contract — arrange a viewing only.
+  explicit acknowledgment before presenting the contact button.
+- Never auto-send, share the user's PII, transfer any deposit, or commit to a
+  contract — the user arranges a viewing themselves.
 
 ## Phase 5 — DUE-DILIGENCE HANDOFF
 Before the user signs anything, present the Tier-2 document checklist from
