@@ -34,38 +34,47 @@ find-property/
 
 ---
 
-## 설치 방법
+## 설치 방법 (Claude 데스크톱 앱)
 
-이 스킬은 Claude의 스킬 디렉터리에 넣으면 자동으로 인식됩니다.
+이 스킬은 **Claude 데스크톱 앱**에 zip 파일로 업로드하여 사용합니다.
+커스텀 스킬은 **Pro · Max · Team · Enterprise 요금제**에서 코드 실행이 켜져 있어야 사용할 수 있습니다.
 
-### 방법 1 — git clone (권장)
+### 1단계 — 코드 실행 기능 켜기
 
-**Claude Code (개인 스킬)**
+`설정(Settings) → Capabilities`에서 **Code execution and file creation(코드 실행 및 파일 생성)**을 켭니다.
+
+### 2단계 — 스킬 zip 내려받기
+
+GitHub 저장소에서 zip을 받습니다.
 ```bash
-git clone git@github.com:hth225/find-property.git ~/.claude/skills/find-property
+git clone git@github.com:hth225/find-property.git
+cd find-property
+# 폴더 자체가 루트에 들어가도록 압축 (SKILL.md만 담으면 안 됩니다)
+zip -r find-property.zip SKILL.md reference
 ```
+> 또는 GitHub의 **Code → Download ZIP** 버튼으로 받아도 됩니다.
+> 핵심은 zip 안에 `SKILL.md`와 `reference/` 폴더가 **함께** 들어 있어야 한다는 점입니다.
 
-**Claude Code (프로젝트 스킬)** — 특정 프로젝트에서만 사용
-```bash
-git clone git@github.com:hth225/find-property.git ./.claude/skills/find-property
-```
+### 3단계 — 데스크톱 앱에 업로드
 
-### 방법 2 — 직접 복사
+`설정(Settings) → Customize → Skills → Upload`에서 위 zip 파일을 업로드합니다.
+업로드하면 Claude가 `SKILL.md`를 읽어 스킬 이름·설명을 자동으로 표시합니다.
 
-이미 zip 등으로 파일을 받았다면, `SKILL.md`와 `reference/` 폴더를 통째로 스킬 디렉터리에 넣습니다.
-```bash
-mkdir -p ~/.claude/skills/find-property
-cp -R SKILL.md reference ~/.claude/skills/find-property/
-```
+### 4단계 — 활성화 확인
 
-### 설치 확인
+스킬 목록에 **find-property**가 나타나면, 토글을 켜서 활성화합니다.
+끄거나 삭제하려면 스킬 옆 `···` 메뉴를 사용하세요.
 
-스킬 디렉터리에 `SKILL.md`가 위치하면 됩니다. Claude Code에서는 `/help`나 스킬 목록에서 `find-property`가 보이는지 확인하세요.
-```
-~/.claude/skills/find-property/SKILL.md   ✅
-```
+### (중요) 브라우저 검색을 위한 Claude Chrome 확장 프로그램
 
-> Claude Code 외 환경(Claude.ai, API 등)에서는 각 플랫폼의 스킬 등록 방식을 따르세요. 핵심은 `SKILL.md`와 `reference/` 폴더가 한 디렉터리에 함께 있어야 한다는 점입니다.
+이 스킬의 **SEARCH 단계**는 네이버 부동산·직방·다방을 **실제 브라우저로 탐색**합니다.
+데스크톱 앱에서 이 기능을 쓰려면 **Claude for Chrome(크롬 확장 프로그램)**을 설치·연결하세요.
+
+- Claude in Chrome은 **베타**이며 **유료 요금제(Pro·Max·Team·Enterprise)**에서 Google Chrome / Microsoft Edge로 사용할 수 있습니다.
+- 확장 프로그램이 Claude에게 웹페이지를 읽고·클릭하고·이동하는 권한을 부여해, 실매물 검색이 가능해집니다.
+- 확장 프로그램 없이도 스킬은 동작하지만, 이 경우 Claude가 **매물 URL을 직접 붙여넣어 달라고 요청**한 뒤 그 매물만 정규화·분석합니다.
+
+> Claude Code 사용자라면 저장소를 `~/.claude/skills/find-property`로 clone 하면 됩니다. 단, 본 README는 데스크톱 앱 기준입니다.
 
 ---
 
@@ -90,7 +99,7 @@ cp -R SKILL.md reference ~/.claude/skills/find-property/
 
 ### 알아두면 좋은 점
 
-- **Computer use(브라우저)가 켜져 있어야** 실매물 검색이 가능합니다. 비활성 상태라면 매물 URL을 직접 제공하면 됩니다.
+- **Claude for Chrome(크롬 확장 프로그램)**이 연결돼 있어야 실매물 검색이 가능합니다. 없으면 매물 URL을 직접 제공하면 됩니다.
 - Claude는 **사용자 승인 없이 메시지를 보내거나 보증금을 이체하거나 계약하지 않습니다.** 목적은 집 보러 가는 약속(viewing) 잡기까지입니다.
 - 전세가율 등 산정이 불가능한 값은 추측하지 않고 "산정 불가"로 표기하며, 불투명함 자체를 위험으로 취급합니다.
 
