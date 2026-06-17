@@ -51,10 +51,10 @@ claude-budongsan/
 
 ### 2단계 — 스킬 zip 내려받기
 
-GitHub 저장소에서 zip을 받습니다.
+GitHub 저장소에서 zip을 받습니다. (저장소명은 `find-property`, 스킬명은 `claude-budongsan`)
 ```bash
-git clone git@github.com:hth225/claude-budongsan.git
-cd claude-budongsan
+git clone git@github.com:hth225/find-property.git
+cd find-property
 # 폴더 자체가 루트에 들어가도록 압축 (SKILL.md만 담으면 안 됩니다)
 zip -r claude-budongsan.zip SKILL.md reference
 ```
@@ -80,7 +80,7 @@ zip -r claude-budongsan.zip SKILL.md reference
 - 확장 프로그램이 Claude에게 웹페이지를 읽고·클릭하고·이동하는 권한을 부여해, 실매물 검색이 가능해집니다.
 - 확장 프로그램 없이도 스킬은 동작하지만, 이 경우 Claude가 **매물 URL을 직접 붙여넣어 달라고 요청**한 뒤 그 매물만 정규화·분석합니다.
 
-> Claude Code 사용자라면 저장소를 `~/.claude/skills/claude-budongsan`으로 clone 하면 됩니다. 단, 본 README는 데스크톱 앱 기준입니다.
+> Claude Code 사용자라면 `git clone git@github.com:hth225/find-property.git ~/.claude/skills/claude-budongsan`처럼 스킬명 폴더로 clone 하면 됩니다. 단, 본 README는 데스크톱 앱 기준입니다.
 
 ---
 
