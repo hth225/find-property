@@ -74,6 +74,10 @@ hints.
 Produce a list of records shaped like:
 { 주소, 거래유형, 보증금, 월세, 매매가, 전용면적, 층/총층, 건물유형, 준공년도,
   관리비, 추정_전세가율(nullable), 시세_comps(nullable), 미끼_의심(bool),
-  중개사_연락처, listing_url, 특징[] }
+  중개사_휴대폰(010, nullable), 중개사_유선(nullable), listing_url, 특징[] }
+
+- 전화번호는 숫자만 남겨 정규화한다(하이픈·공백·`+82` 제거). 매물에 사무실 유선(02·031 등
+  지역번호)과 휴대폰(010)이 같이 있으면 **둘을 분리**해 담는다. CONTACT 단계의 sms 딥링크는
+  `중개사_휴대폰`(010)만 사용하므로, 010 번호를 놓치지 말고 추출한다(`중개사_유선`은 통화용 보조).
 
 Pass these to Phase 3 (RANK) for filtering, fit ranking, and fraud screening.

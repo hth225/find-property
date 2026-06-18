@@ -43,11 +43,13 @@ sends it.** Present the draft so the user can act on it in one step:
 - **Copyable message:** output the exact Korean message inside a fenced code
   block (gives a one-click copy button). Include the proposed viewing times.
 - **"메시지 앱에서 열기" button:** add a clickable `sms:` deep link to the
-  listing's contact number with the message URL-encoded into the body, e.g.
+  agent's **mobile (010)** number with the message URL-encoded into the body, e.g.
   `[📩 메시지 앱에서 열기](sms:01012345678&body=<URL-encoded message>)` — see
-  the deep-link recipe in `reference/korea-real-estate.md`. Use `imessage:` as
-  an Apple-device alternative. If no phone number is exposed, give the copyable
-  message plus the listing site's contact link instead.
+  the deep-link recipe in `reference/korea-real-estate.md`. **반드시 010으로
+  시작하는 휴대폰 번호를 사용한다** — 02 등 지역번호(유선)는 문자가 가지 않으므로
+  sms 링크에 쓰지 않는다. 매물에 02 사무실 번호와 010 번호가 함께 있으면 010을
+  고르고, 010이 없으면 sms 버튼 대신 복사용 메시지 + `tel:` 통화 링크(유선 가능)나
+  사이트 문의 링크를 제공한다. Use `imessage:` as an Apple-device alternative.
 - **Gate 1 (ALL listings):** show the message + viewing times for the user to
   review before they copy/send.
 - **Gate 2 (🔴 listings):** show the fraud warning with reasons and require
